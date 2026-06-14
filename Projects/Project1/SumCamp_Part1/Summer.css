@@ -1,0 +1,36 @@
+h1, h2, h3{
+    text-decoration: underline;
+}
+html{
+    padding: .4rem;
+    border: .66rem double brown;
+    margin: 1.4rem;
+    background-color: antiquewhite;
+}
+body{
+    border: 1rem ridge blue;
+    background-color: white;
+    padding: 3rem;
+
+}
+table, th, td {
+    border: .1rem solid black;
+}
+th{
+    background-color: antiquewhite;
+    color: brown;
+}
+.firstpara {
+    color: brown;
+}
+#headpara::first-letter{
+    font-weight: bold;
+    font-size: 4rem;
+}
+#headpara:hover{
+    color: red;
+}
+caption{
+    color: blue;
+    text-decoration: underline;
+}
