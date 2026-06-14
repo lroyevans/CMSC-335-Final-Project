@@ -6,6 +6,11 @@
     <title>Class/Id Selectors</title>
     <style>
         /* Notice the period for the class selector */
+  /* Notice the # for the id selector */
+        #lastParagraph {
+            background-color: red;
+        }
+
         .myFirstStyle {
             color: blue;
             background-color: yellow;
@@ -13,20 +18,18 @@
 
         .mySecondStyle {
             font-size: 3em;
+            color: red;
         }
 
-        /* Notice the # for the id selector */
-        #lastParagraph {
-            background-color: red;
-        }
+      
     </style>
 </head>
 
 <body>
     <p class="myFirstStyle">Relying on a class selector.</p>
     <p class="mySecondStyle">Relying on a second class selector.</p>
-    <p class="mySecondStyle myFirstStyle">Combining class selectors.</p>
-    <p id="lastParagraph">Last paragraph.</p>
+    <p class="myFirstStyle mySecondStyle">Combining class selectors.</p>
+    <p  id="lastParagraph" class="myFirstStyle">Last paragraph.</p>
 </body>
 
 </html>

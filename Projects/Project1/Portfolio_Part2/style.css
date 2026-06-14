@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --primary-color: rgb(163, 146, 51);
+    --secondary-color: rgb(211, 189, 65);
+}
+html{
+    background-image: url(MHbackground.png);
+    background-size: cover;
+    border: 1rem double rgba(180, 62, 8, 0.486);
+}
+body{
+    padding: 10rem;
+    padding-bottom: 29rem;
+    text-align: center;
+}
+h1{
+    text-decoration: underline;
+}
+a{
+    font-family: Roboto;
+}
+a:hover{
+    color: rgb(255, 93, 93);
+}
+table, td, th{
+    color: black;
+    border: .1rem solid rgb(17, 0, 31);
+}
+tr:nth-child(even) {
+    background-color: var(--primary-color);
+}
+tr:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+th{
+    background-color: var(--primary-color);
+}
+table{
+    margin: 0 auto;
+}
+

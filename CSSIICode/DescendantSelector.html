@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Descendant Selectors</title>
+    <style>
+        a {
+            color: green;
+        }
+
+        /* When anchor (a) is descendant of div and li */
+        div li a {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Local News</h1>
+    <p>
+        <a href="http://www.diamondbackonline.com/" title="City News">Diamondback</a>
+    </p>
+
+    <h2>TV Stations</h2>
+    <div>
+        <ul>
+            <div>
+                <li><a href="http://www.abc.com/">ABC</a></li>
+                <li><a href="http://www.nbc.com/">NBC</a></li>
+            </div>
+        </ul>
+    </div>
+
+    <h2>UMD</h2>
+    <ul>
+        <li><a href="http://www.umd.edu/">ABC</a></li>
+        <li><a href="http://www.cs.umd.edu/">NBC</a></li>
+    </ul>
+</body>
+
+</html>

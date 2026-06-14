@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>z-index property</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #p1 {
+            position: relative;
+            top: 10em;
+            left: 5em;
+            background-color: orange;
+
+            /* Change to 1 and #p2 z-index to 2 */
+            z-index: 10;
+        }
+
+
+        #p2 {
+            position: relative;
+            top: 3em;
+            left: 2em;
+            background-color: aqua;
+
+            /* Change to 2 and #p1 z-index to 1 */
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">
+        First paragraph in the document (line #1).<br>
+        First paragraph in the document (line #2).<br>
+        First paragraph in the document (line #3).<br>
+        First paragraph in the document (line #4).<br>
+        First paragraph in the document (line #5)<br>
+        First paragraph in the document (line #6).<br>
+        First paragraph in the document (line #7).
+    </p>
+    <p id="p2">
+        Second paragraph in the document (line #1).<br>
+        Second paragraph in the document (line #2).<br>
+        Second paragraph in the document (line #3).<br>
+        Second paragraph in the document (line #4).<br>
+        Second paragraph in the document (line #5).<br>
+        Second paragraph in the document (line #6).<br>
+        Second paragraph in the document (line #7).
+    </p>
+</body>
+
+</html>

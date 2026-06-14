@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pseudoelements</title>
+    <style>
+        /* Try first-line instead of first-letter as well */
+        p::first-letter {
+            font-weight: bold;
+            font-size: 4rem;
+            /* try with em */
+        }
+
+        #end::first-letter {
+            color: blue;
+        }
+
+        a:link{
+            color:brown
+        }
+        a:hover{
+            color:yellow
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Partnerships</h1>
+    <p>
+        The future of <span> education in America</span> depends on forming
+        effective partnerships with government, industry, business, faculty
+        and students to carry on the discovery and creation of knowledge
+        that underlies the continuing improvement of our social, civic,
+        economic and cultural lives.
+        <a href="http://www.cnn.com">CNN Web Page</a>
+    </p>
+
+    <p id="end">
+        University of MD.
+    </p>
+</body>
+
+</html>
