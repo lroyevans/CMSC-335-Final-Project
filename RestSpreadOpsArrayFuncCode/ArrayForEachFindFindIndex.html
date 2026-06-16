@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JS forEach, find, findIndex</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /* Notice: Sometimes running prettier on code leads to a format we */
+        /* might not like. We are not running prettier on this example. */
+        
+        document.writeln(`***** <strong>Example #1</strong> Result of processing with forEach `);
+        document.writeln(`(with 2-parameter function) *****<br>`);
+        const fruits = ["apple", "pear", "banana"];
+        fruits[7] = "strawberry"; /* Leaving undefined elements in between */
+
+        /* We can print the array without iterating */
+        document.writeln(`Array: ${fruits}<br>`);
+
+        /* Iterating to print the array */
+        fruits.forEach(function(elem, index) {
+            document.writeln(`Index: ${index}, Elem: ${elem}<br>`);
+        });
+
+        document.writeln(`<br>**** Using arrow function<br>`);
+        fruits.forEach((elem, index) => {
+            document.writeln(`Index: ${index}, Elem: ${elem}<br>`);
+        });
+        
+        document.writeln(`<br>**** <strong>Example #2</strong> Result of processing with forEach `);
+        document.writeln(`(with with 1-parameter function) *****<br>`);
+        fruits.forEach(elem => {
+            document.writeln(`Elem: ${elem}<br>`);
+        });
+
+        document.writeln(`<br>***** <strong>Example #3</strong> Result of processing with find, `);
+        document.writeln(` finding fruit's name with particular length) *****<br>`);
+        let targetLength = 6 /* Try with 8 */
+        const result = fruits.find(elem => elem.length == targetLength);
+        if (result !== undefined) {
+            document.writeln(`First fruit with length ${targetLength} is ${result}`);
+        } else {
+            document.writeln(`Not found`);
+        }
+        document.writeln("<br>");
+
+        document.writeln(`<br>***** <strong>Example #4</strong> Result of processing with findIndex, `);
+        document.writeln(`finding fruit's name with particular length) *****<br>`);
+        targetLength = 6; /* Try with 8 */
+        const resultIndex = fruits.findIndex(elem => elem.length == targetLength);
+        if (resultIndex !== -1) {
+            document.writeln(`Index of first fruit with length ${targetLength} is ${resultIndex}`);
+        } else {
+            document.writeln(`Not found`);
+        }
+        document.writeln(`<br><br>`);
+    </script>
+</body></html>
