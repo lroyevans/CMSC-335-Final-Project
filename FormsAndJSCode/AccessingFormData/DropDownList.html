@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Drow-Down List</title>
+</head>
+
+<body>
+	<h2>Programming Language Preference</h2>
+
+	<form>
+		<select id="languageChoice">
+			<!-- value= defines the actual value retrieved -->
+			<option value="JavaScript">JavaScript</option>
+			<option value="C# Wow!" selected>C#</option>
+			<option value="Python">Python</option>
+		</select>
+		<button type="button">Display Choice</button>
+		<input type="reset">
+	</form>
+	<hr>
+	<div id="display"></div>
+
+	<script>
+		"use strict";
+
+		/* Enable one of the following two at a time */
+		document.querySelector("button").onclick = displayChoice;
+		// document.getElementById("languageChoice").onchange = displayChoice;
+
+		function displayChoice() {
+			const optionSelected = document.getElementById("languageChoice").value;
+			document.getElementById("display").innerHTML = `User selected: ${optionSelected}`;
+		}
+	</script>
+</body></html>

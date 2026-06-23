@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Catalog Inquiry
+        </title>
+        <link rel = "stylesheet" href="style.css" type= "text/css">
+    </head>
+    <body>
+        <div class="maincontain">
+            <h1>Catalog Inquiry</h1>
+            <div id="CI">
+                <form action="http://npp.cs.umd.edu/cmsc335/projects/TerpStore/catalogInquiry.php" method="get">
+                    <label for="item-choice">Item Category</label>
+                    <input list="categories" id="item-choice" name="item-choice">
+                    <datalist id="categories">
+                        <option value="clothes">
+                        <option value="books">
+                        <option value="music">
+                        <option value="food">
+                        <option value="other">
+                    </datalist>
+                    <br><br>
+
+                    <label for="cost">Maximum Cost($)</label>
+                    <input id="cost" type="number" min="1" max="1000" value="1" step="5"  name="maximumCost">
+                    <br><br>
+
+                    <input id="campus" type="checkbox"  name="availableOnCampus">
+                    <label for="campus">Available on Campus</label>
+                    <br><br>
+
+                    <input id="online" type="checkbox" name="availableOnline">
+                    <label for="online">Available Online</label>
+                    <br>
+
+                    <label for="info">Additioanl Information</label>
+                    <br>
+                    <textarea id="info" rows="10" cols="70" name="info"></textarea>
+                    <br><br>
+
+                    <label for="email">Contact Email Address:</label>
+                    <input id="email" type="email" placeholder="example@terpmail.umd.edu" name="email">
+                    <br><br>
+
+                    <button type="submit">Submit Inquiry</button>
+                    <button type="reset">Clear</button>
+                </form>
+            </div>
+            <!--#include file="./footer.shtml" -->
+        </div>
+    </body>
+</html>
