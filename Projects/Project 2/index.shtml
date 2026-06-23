@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <title>Terp Store</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css"></link>
     </head>
     <body>
         <div class="maincontain">
-        <h1>Terp Store</h1>
+            <h1>Terp Store</h1>
             <div id="directory">
                 <a href="catalogInquiry.shtml">Catalog Inquiry</a>
-                <br>
+                <br></br>
                 <a href="placingOrder.shtml">Placing Order</a>
             </div>
             <!--#include file="./footer.shtml" -->

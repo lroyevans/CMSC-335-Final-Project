@@ -7,7 +7,7 @@ form{
 }
 #PO{
     margin-top: 1rem;
-    margin-bottom: 24rem;
+    margin-bottom: 18rem;
     margin-left: 3rem;
     margin-right: 17rem;
 }
@@ -15,7 +15,7 @@ form{
     margin-top: 1rem;
     margin-bottom: 6rem;
     margin-left: 3rem;
-    margin-right: 17rem;
+    margin-right: 20rem;
 }
 .maincontain{
     border: .5rem solid green;
@@ -40,7 +40,7 @@ input{
     border: .2rem solid red;
 }
 .cc{
-    width: .1rem;
+    width: 2rem;
 }
 button{
     border: .2rem double black;
@@ -48,7 +48,7 @@ button{
     padding-left: 1rem;
     padding-right: 1rem;
     margin-right: 1rem;
-    width: max-content;
+    width: 8rem;
     border-radius: .75rem;
 }
 h1{

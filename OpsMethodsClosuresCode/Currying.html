@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Currying</title>
+  </head>
+
+  <body>
+    <script>
+      "use strict";
+
+      /* What will be curried */
+      function getValueOriginal(a, b, c) {
+        return a * b + c;
+      }
+
+      /* Curried */
+      function getValueFixingAandB(a, b) {
+        return function (c) {
+          /* The one we will be eventually calling */
+          return a * b + c;
+        };
+      }
+
+      document.writeln(`getValueOriginal(2, 3, 5): ${getValueOriginal(2, 3, 5)}<br>`);
+      const getValuea2b3 = getValueFixingAandB(2, 3);
+      document.writeln(`getValuea2b3(5): ${getValuea2b3(5)}<br>`);
+
+      /* Curried */
+      function getValueFixingA(a) {
+        return function (b, c) {
+          /* The one we will be eventually calling */
+          return a * b + c;
+        };
+      }
+      const getValuea10 = getValueFixingA(100);
+      document.writeln(`getValuea10(4, 6): ${getValuea10(4, 6)}`);
+      
+    </script>
+  </body>
+</html>

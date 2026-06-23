@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Promises</title>
+   </head>
+   <body>
+      <h1>Open Console to See Results</h1>
+      <script>
+         "use strict";
+         
+         /* Adding async wraps the return value in a Promise object */
+         async function getGift(budget) {
+            if (budget != 0) {
+               const gifts = ["Clothes", "Laptop"];
+               const index = Math.floor(Math.random() * 2);
+               return gifts[index];
+            } else {
+               throw new Error("No budget");
+            }
+         }
+
+         /* Using IIFE */
+         (async () => {
+            const budget = 100; // try with 0 budget
+            const giftPromise = getGift(budget);
+            console.log("************");
+            console.log(giftPromise);
+            console.log("************");
+            try {
+               const gift = await giftPromise;
+               console.log(`Gift: ${gift}`);
+            } catch(error) {
+               console.log(error);
+            }
+         })();
+      </script>
+   </body>
+</html>

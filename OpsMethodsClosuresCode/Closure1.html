@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Closure</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function counter(initialValue, delta) {
+            let value = initialValue;
+
+            function increment() {
+                value += delta;  // Accessing both parameter (initialvalue) and local (value)
+                
+                return value;
+            }
+
+            return increment; // Returning function
+        }
+        
+        const initialValue = 2, delta = 3;
+        const increment = counter(initialValue, delta);
+        document.writeln(`${increment()}<br>`);
+        document.writeln(`${increment()}<br>`);
+        document.writeln(`${increment()}<br>`);
+    </script>
+</body>
+
+</html>
