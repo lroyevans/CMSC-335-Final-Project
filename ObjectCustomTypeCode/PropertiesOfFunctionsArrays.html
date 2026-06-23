@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JS Object Creation Example</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        
+        document.writeln("<h2>Example #1: Properties of Functions</h2>");
+        function example() { }
+        let propertiesArray = getAllProperties(example);
+        document.writeln("<strong>Displaying all properties collected</strong><br>");
+        propertiesArray.forEach(prop => document.writeln(prop + "<br>"));
+        if (Object.prototype.isPrototypeOf(example)) {
+            document.writeln("<br><strong>Object.prototype is prototype of object1</strong>");
+        }
+        document.writeln("<hr>");
+
+        document.writeln("<h2>Example #2: Properties of Array</h2>");
+        let array = new Array();
+        propertiesArray = getAllProperties(array);
+        document.writeln("<strong>Displaying all properties collected</strong><br>");
+        propertiesArray.forEach(prop => document.writeln(prop + "<br>"));
+        if (Object.prototype.isPrototypeOf(array)) {
+            document.writeln("<br><strong>Object.prototype is prototype of object1</strong>");
+        }
+        document.writeln("<hr>");
+
+        /* Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects */
+        function getAllProperties(src) {
+            let currObj,
+                answer = [];
+
+            /* Traversing the prototype chain */
+            currObj = src;
+            let level = 1;
+            while (currObj !== null) {
+                let currObjProperties = Object.getOwnPropertyNames(currObj);
+                document.writeln(`getAllPropertiesMethod(): Adding own properties, Level ${level++}:  ${currObjProperties} <br>`);
+                answer = answer.concat(currObjProperties);
+                currObj = Object.getPrototypeOf(currObj); /* Gives me value of __proto__ */
+            }
+            document.writeln("<strong>Traversal Completed</strong><br>");
+            return answer;
+        }
+
+    </script>
+</body>
+
+</html>

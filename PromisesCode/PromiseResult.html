@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Example</title>
+  </head>
+  <body>
+    <h1>Open Console to See Results</h1>
+    <script>
+      "use strict";
+
+      let success = true;
+      function promiseResult() {
+        let promise;
+
+        promise = new Promise((resolve, reject) => { 
+          if (success) {
+            resolve(20);
+          } else {
+            reject("the promise failed in this case");
+          } 
+        });
+
+        return promise;
+      }
+
+      function task1() {
+        success = true;
+        const promise = promiseResult();
+        promise.then(() => "Done", () => "Failure");
+        console.log("promise", promise);
+      }
+     
+      function task2() {
+        success = false;
+        const promise = promiseResult();
+        promise.then(() => "Done", () => "Failure");
+        console.log("promise", promise);
+      }
+
+      processChoice();
+      function processChoice() {
+        const taskNumber = Number(prompt("Enter choice: "));
+        console.log(`Task #: ${taskNumber}`);
+
+        const taskFunction = new Function("", `task${taskNumber}()`);
+        taskFunction();
+      }
+      
+    </script>
+  </body>
+</html>

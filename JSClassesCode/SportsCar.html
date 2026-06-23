@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Class Example (Inheritance)</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        class Car {
+            static dealership = "Terp Cars"; /* Static public */
+            static #instances = 0; /* Static private */
+
+            passengers = ["Rose"]; /* Public */
+            #tag; #mileage; /* Private (defined in the same line for convenience) */
+
+            constructor(tag, mileage) {
+                this.#tag = tag;
+                this.#mileage = mileage;
+                Car.#instances++;
+            }
+
+            displayInfo() {
+                document.writeln(`Tag: ${this.#tag}, Mileage: ${this.#mileage}, Passengers: ${this.passengers}`);
+            }
+
+            [Symbol.toPrimitive]() {
+                /* Java's toString() */
+                return `Tag: ${this.#tag}, Mileage: ${this.#mileage}, Passengers: ${this.passengers}`;
+            }
+
+            get tag() {
+                return this.#tag;
+            }
+
+            static getInstances() {
+                return Car.#instances;
+            }
+        }
+
+        class SportsCar extends Car {
+            #paddleShiftersType; /* Private instance variable */
+            constructor(tag, mileage, paddleShifters) {
+                super(tag, mileage); /* Calling super class constructor */
+                this.#paddleShiftersType = paddleShifters;
+            }
+
+            displayInfo() {
+                super.displayInfo();  /* Calling super class method */
+                document.writeln(`Paddle Shifters Type: ${this.#paddleShiftersType}<br>`);
+            }
+
+            [Symbol.toPrimitive]() { /* Call super class "toString()" */
+                return `${super[Symbol.toPrimitive]()}, Paddle Shifters Type: ${this.#paddleShiftersType}`;
+            }
+
+            get paddleShiftersType() {
+                return this.#paddleShiftersType;
+            }
+        } 
+
+        const car = new Car("Nelyota", 50000);
+        document.writeln(`Mark #1: car info:<br> ${car}<br><br>`)
+        const sportsCar = new SportsCar("X2W-Sports", 22000, "TypeB");
+        document.writeln(`Mark #2: Sports car info:<br> ${sportsCar}<br><br>`);
+        document.writeln(`Mark #3: Paddle Shifters Type: ${sportsCar.paddleShiftersType}<br><br>`);
+        document.writeln(`Mark #4: Tag: ${sportsCar.tag}<br><br>`);
+        document.writeln(`Mark #5: Total Cars: ${Car.getInstances()}<br><br>`);
+        document.writeln(`Mart #6: Using displayInfo()<br>`);
+        sportsCar.displayInfo();
+        
+    </script>
+</body>
+
+</html>

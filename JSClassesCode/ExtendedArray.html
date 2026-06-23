@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Class Example</title>
+  </head>
+
+  <body>
+    <script>
+      "use strict";
+
+      /* There is not iEmpty() method in the Array type */
+      class MyArray extends Array {
+        isEmpty() {
+          return this.length === 0;
+        }
+      }
+
+      class StoreBranch {
+        #name;
+        #established;
+        #location;
+        #sales;
+        constructor(name, established, location, sales) {
+          this.#name = name;
+          this.#established = established;
+          this.#location = location;
+          this.#sales = sales;
+        }
+
+        [Symbol.toPrimitive]() {
+          return `${this.#name}-${this.#location}-$${this.#sales}`;
+        }
+
+        get sales() {
+          return this.#sales;
+        }
+
+      }
+
+      const firstStore = new StoreBranch("Sandy's", new Date("1995"), "Greenbelt", 1000);
+      const stores = new MyArray(
+        firstStore,
+        new StoreBranch("Sandy's", new Date("2005"), "College Park", 3000),
+        new StoreBranch("Sandy's", new Date("1985"), "Austin", 600)
+      );
+
+      document.writeln("All the stores<br>");
+      stores.forEach(store => document.writeln(`${store}<br>`));
+
+      const salesLowerValue = 1000;
+      document.writeln(`Stores with sales of least $${salesLowerValue} in sales<br>`)
+      const storesWithGoodSales = stores.filter(sb => sb.sales >= salesLowerValue);
+      storesWithGoodSales.forEach(sb => document.writeln(sb));
+  
+      document.writeln(`<br>Array is empty? ${storesWithGoodSales.isEmpty()}<br>`);
+    </script>
+  </body>
+</html>

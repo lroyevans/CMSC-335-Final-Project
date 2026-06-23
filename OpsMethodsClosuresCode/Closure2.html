@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Closure</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function counter(initialValue, delta) {
+            let value = initialValue;
+
+            function increment() {
+                value += delta;  // Accessing both parameter (delta) and local (value)
+                
+                return value;
+            }
+
+            function decrement() {
+                value -= delta;  // Accessing both parameter and local
+                
+                return value;
+            }
+
+
+            return {increment, decrement}; // Returning object with functions
+        }
+        
+        const initialValue = 2, delta = 3;
+
+        /* The following is often seeing in code */
+        const {increment, decrement} = counter(initialValue, delta);
+        document.writeln(`${increment()}<br>`);
+        document.writeln(`${increment()}<br>`);
+        document.writeln(`${decrement()}<br>`);
+        document.writeln(`${decrement()}<br>`);
+        
+    </script>
+</body>
+
+</html>
