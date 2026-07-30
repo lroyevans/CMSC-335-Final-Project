@@ -1,0 +1,10 @@
+.quoteContainer{
+    color: black;
+    background-color: rgb(247, 243, 187);
+    padding: .1rem;
+    margin: .1rem;
+    border: double rgb(150, 1, 1) .4rem;
+    width: fit-content;
+    max-width: 15rem;
+    min-width: 12rem;
+}
