@@ -1,0 +1,41 @@
+# landing
+defaults to displaying the book of quotes
+4 buttons
+1 for submitting your own quotes
+1 for re-rendering the book of quotes
+1 for deleting quotes
+1 for updating old quotes 
+
+# book of quotes
+lists out all entries in the backend
+
+# adding quotes
+press button to display relevent form 
+
+press the + button to add to your quote log
+
+once all quotes are submitted press the submit all quotes button
+
+follow game(re-enter the quotes, speaker doesn't matter)
+    time limit based on # of quotes, base time + scaling time
+
+thinking limited attempts based on length of bufffer
+
+# deleting quotes
+
+identify quote
+
+prevent deletion untill answer the riddle
+
+"What... is my name?" - King Boomy
+    Liam(caps don't matter)
+    check on edit 
+if true can go through with deletion 
+
+# updating quotes
+
+identify quote
+
+multiple choice monty python
+
+

@@ -1,0 +1,15 @@
+input[type="text"], textarea{
+    field-sizing: content;
+    min-width: 12rem;
+    max-width: 12rem;
+    margin: .1rem;
+}
+
+legend{
+    font-size: 1rem;
+}
+
+.Input{
+}
+
+
